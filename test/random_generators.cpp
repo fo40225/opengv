@@ -30,6 +30,7 @@
 
 #include "random_generators.hpp"
 #include "time_measurement.hpp"
+#define _USE_MATH_DEFINES
 #include <math.h>
 #include <iostream>
 

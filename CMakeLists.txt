@@ -39,7 +39,8 @@ IF(BUILD_POSITION_INDEPENDENT_CODE)
   add_definitions( -fPIC )
 ENDIF()
 
-ADD_DEFINITIONS (
+IF(!MSVC)
+  ADD_DEFINITIONS (
 -Wall
 -Wextra
 #-Werror
@@ -47,6 +48,7 @@ ADD_DEFINITIONS (
 -Wno-unused-parameter
 -fno-strict-aliasing
 )
+ENDIF()
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/modules/")
 find_package(Eigen REQUIRED)
